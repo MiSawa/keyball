@@ -54,7 +54,7 @@ enum layers {
 #define RAISEENT LT(LAYER_RAISE, KC_ENT)
 
 // clang-format off
-const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+const uint16_t PROGMEM keymaps[DYNAMIC_KEYMAP_LAYER_COUNT][MATRIX_ROWS][MATRIX_COLS] = {
   [LAYER_WORKMAN] = LAYOUT_right_ball(
     KC_TAB   , KC_Q     , KC_D     , KC_R     , KC_W     , KC_B     ,                                        KC_J     , KC_F     , KC_U     , KC_P     , KC_SCLN  , KC_BSLS  ,
     KC_LCTL  , KC_A     , KC_S     , KC_H     , KC_T     , KC_G     ,                                        KC_Y     , KC_N     , KC_E     , KC_O     , KC_I     , KC_QUOT  ,
