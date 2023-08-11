@@ -21,27 +21,27 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "quantum.h"
 
 enum layers {
-  LAYER_WORKMAN,
-  LAYER_QWERTY,
-  LAYER_LOWER,
-  LAYER_UPPER,
-  LAYER_MOUSE,
-  LAYER_ADJUST,
+    LAYER_WORKMAN,
+    LAYER_QWERTY,
+    LAYER_LOWER,
+    LAYER_UPPER,
+    LAYER_MOUSE,
+    LAYER_ADJUST,
 };
 
 #ifndef _______
-#  define _______ KC_TRNS
+#    define _______ KC_TRNS
 #endif
 #ifndef XXXXXXX
-#  define XXXXXXX KC_NO
+#    define XXXXXXX KC_NO
 #endif
 
 #define MO_LOWER MO(LAYER_LOWER)
 #define MO_RAISE MO(LAYER_UPPER)
-#define MO_ADJ   MO(LAYER_ADJUST)
+#define MO_ADJ MO(LAYER_ADJUST)
 #define MO_MOUSE MO(LAYER_MOUSE)
 #define DF_QWERT DF(LAYER_QWERTY)
-#define DF_WORK  DF(LAYER_WORKMAN)
+#define DF_WORK DF(LAYER_WORKMAN)
 
 #define LALTMHEN ALT_T(KC_MHEN)
 #define RALTHENK RALT_T(KC_HENK)
