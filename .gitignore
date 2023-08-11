@@ -1,1 +1,3 @@
 tmp/
+.clang-format
+__qmk__/
