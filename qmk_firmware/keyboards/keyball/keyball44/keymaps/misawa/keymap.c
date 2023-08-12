@@ -29,12 +29,8 @@ enum layers {
     LAYER_ADJUST,
 };
 
-#ifndef _______
-#    define _______ KC_TRNS
-#endif
-#ifndef XXXXXXX
-#    define XXXXXXX KC_NO
-#endif
+#define OOOOOOO KC_TRNS
+#define XXXXXXX KC_NO
 
 #define MO_LOWER MO(LAYER_LOWER)
 #define MO_RAISE MO(LAYER_UPPER)
@@ -71,30 +67,30 @@ const uint16_t PROGMEM keymaps[DYNAMIC_KEYMAP_LAYER_COUNT][MATRIX_ROWS][MATRIX_C
 
   [LAYER_LOWER] = LAYOUT_right_ball(
     KC_ESC   , KC_EXLM  , KC_AT    , KC_HASH  , KC_DLR   , KC_PERC  ,                                        KC_CIRC  , KC_AMPR  , KC_ASTR  , KC_LPRN  , KC_RPRN  , KC_DEL   ,
-    _______  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        KC_GRV   , KC_MINUS , KC_EQL   , KC_LCBR  , KC_RCBR  , KC_GRV   ,
-    _______  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        KC_TILD  , KC_UNDS  , KC_PLUS  , KC_LBRC  , KC_RBRC  , KC_TILD  ,
-                          _______  , _______       , _______  , _______  , _______  ,                   _______  , _______  ,                            _______
+    OOOOOOO  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        KC_GRV   , KC_MINUS , KC_EQL   , KC_LCBR  , KC_RCBR  , KC_GRV   ,
+    OOOOOOO  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        KC_TILD  , KC_UNDS  , KC_PLUS  , KC_LBRC  , KC_RBRC  , KC_TILD  ,
+                          OOOOOOO  , OOOOOOO       , OOOOOOO  , OOOOOOO  , OOOOOOO  ,                   OOOOOOO  , OOOOOOO  ,                            OOOOOOO
   ),
 
   [LAYER_UPPER] = LAYOUT_right_ball(
-    _______  , KC_F1    , KC_F2    , KC_F3    , KC_F4    , KC_F5    ,                                        KC_F6    , KC_F7    , KC_F8    , KC_F9    , KC_F10   , KC_F11   ,
-    _______  , KC_1     , KC_2     , KC_3     , KC_4     , KC_5     ,                                        KC_6     , KC_7     , KC_8     , KC_9     , KC_0     , KC_F12   ,
-    _______  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        KC_LEFT  , KC_DOWN  , KC_UP    , KC_RIGHT , XXXXXXX  , _______  ,
-                          _______  , _______       , _______  , _______  , _______  ,                   _______  , _______  ,                            _______
+    OOOOOOO  , KC_F1    , KC_F2    , KC_F3    , KC_F4    , KC_F5    ,                                        KC_F6    , KC_F7    , KC_F8    , KC_F9    , KC_F10   , KC_F11   ,
+    OOOOOOO  , KC_1     , KC_2     , KC_3     , KC_4     , KC_5     ,                                        KC_6     , KC_7     , KC_8     , KC_9     , KC_0     , KC_F12   ,
+    OOOOOOO  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        KC_LEFT  , KC_DOWN  , KC_UP    , KC_RIGHT , XXXXXXX  , OOOOOOO  ,
+                          OOOOOOO  , OOOOOOO       , OOOOOOO  , OOOOOOO  , OOOOOOO  ,                   OOOOOOO  , OOOOOOO  ,                            OOOOOOO
   ),
 
   [LAYER_MOUSE] = LAYOUT_right_ball(
-    _______  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        XXXXXXX  , XXXXXXX  , SCRL_MO  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,
-    _______  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        XXXXXXX  , KC_BTN1  , KC_BTN2  , KC_BTN3  , XXXXXXX  , XXXXXXX  ,
-    _______  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , _______  ,
-                          _______  , _______       , _______  , _______  , _______  ,                   _______  , _______  ,                            _______
+    OOOOOOO  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        XXXXXXX  , XXXXXXX  , SCRL_MO  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,
+    OOOOOOO  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        XXXXXXX  , KC_BTN1  , KC_BTN2  , KC_BTN3  , XXXXXXX  , XXXXXXX  ,
+    OOOOOOO  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , OOOOOOO  ,
+                          OOOOOOO  , OOOOOOO       , OOOOOOO  , OOOOOOO  , OOOOOOO  ,                   OOOOOOO  , OOOOOOO  ,                            OOOOOOO
   ),
 
   [LAYER_ADJUST] = LAYOUT_right_ball(
     XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        DF_WORK  , DF_QWERT , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,
     XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        XXXXXXX  , SCRL_DVD , SCRL_DVI , XXXXXXX  , XXXXXXX  , XXXXXXX  ,
     XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        CPI_D1K  , CPI_D100 , CPI_I100 , CPI_I1K  , XXXXXXX  , KBC_SAVE ,
-                          RESET    , KBC_RST       , XXXXXXX  , _______  , XXXXXXX  ,                   XXXXXXX  , _______  ,                            XXXXXXX
+                          RESET    , KBC_RST       , XXXXXXX  , OOOOOOO  , XXXXXXX  ,                   XXXXXXX  , OOOOOOO  ,                            XXXXXXX
   ),
 };
 // clang-format on
