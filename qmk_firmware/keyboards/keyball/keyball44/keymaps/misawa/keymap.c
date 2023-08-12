@@ -48,6 +48,7 @@ enum layers {
 
 #define LOWERSPC LT(LAYER_LOWER, KC_SPC)
 #define RAISEENT LT(LAYER_RAISE, KC_ENT)
+#define MOUSEHNK LT(LAYER_MOUSE, KC_HENK)
 
 // clang-format off
 const uint16_t PROGMEM keymaps[DYNAMIC_KEYMAP_LAYER_COUNT][MATRIX_ROWS][MATRIX_COLS] = {
@@ -55,14 +56,14 @@ const uint16_t PROGMEM keymaps[DYNAMIC_KEYMAP_LAYER_COUNT][MATRIX_ROWS][MATRIX_C
     KC_TAB   , KC_Q     , KC_D     , KC_R     , KC_W     , KC_B     ,                                        KC_J     , KC_F     , KC_U     , KC_P     , KC_SCLN  , KC_BSLS  ,
     KC_LCTL  , KC_A     , KC_S     , KC_H     , KC_T     , KC_G     ,                                        KC_Y     , KC_N     , KC_E     , KC_O     , KC_I     , KC_QUOT  ,
     KC_LSFT  , KC_Z     , KC_X     , KC_M     , KC_C     , KC_V     ,                                        KC_K     , KC_L     , KC_COMM  , KC_DOT   , KC_SLSH  , KC_RSFT  ,
-                          LALTMHEN , LCTLHENK      , KC_BSPC  , MO_LOWER , KC_SPC   ,                   KC_ENT   , MO_RAISE ,                            MO_MOUSE
+                          LALTMHEN , LCTLHENK      , KC_DEL   , LOWERSPC , KC_SPC   ,                   KC_BSPC  , RAISEENT ,                            MOUSEHNK
   ),
 
   [LAYER_QWERTY] = LAYOUT_right_ball(
     KC_TAB   , KC_Q     , KC_W     , KC_E     , KC_R     , KC_T     ,                                        KC_Y     , KC_U     , KC_I     , KC_O     , KC_P     , KC_BSLS  ,
     KC_LCTL  , KC_A     , KC_S     , KC_D     , KC_F     , KC_G     ,                                        KC_H     , KC_J     , KC_K     , KC_L     , KC_SCLN  , KC_QUOT  ,
     KC_LSFT  , KC_Z     , KC_X     , KC_C     , KC_V     , KC_B     ,                                        KC_N     , KC_M     , KC_COMM  , KC_DOT   , KC_SLSH  , KC_RSFT  ,
-                          LALTMHEN , LCTLHENK      , KC_BSPC  , MO_LOWER , KC_SPC   ,                   KC_ENT   , MO_RAISE ,                            MO_MOUSE
+                          LALTMHEN , LCTLHENK      , KC_DEL   , LOWERSPC , KC_SPC   ,                   KC_BSPC  , RAISEENT ,                            MOUSEHNK
   ),
 
   [LAYER_LOWER] = LAYOUT_right_ball(
@@ -80,7 +81,7 @@ const uint16_t PROGMEM keymaps[DYNAMIC_KEYMAP_LAYER_COUNT][MATRIX_ROWS][MATRIX_C
   ),
 
   [LAYER_MOUSE] = LAYOUT_right_ball(
-    OOOOOOO  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        XXXXXXX  , XXXXXXX  , SCRL_MO  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,
+    OOOOOOO  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        XXXXXXX  , XXXXXXX  , SCRL_MO  , KC_MUTE  , KC_VOLD  , KC_VOLU  ,
     OOOOOOO  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        XXXXXXX  , KC_BTN1  , KC_BTN2  , KC_BTN3  , XXXXXXX  , XXXXXXX  ,
     OOOOOOO  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , OOOOOOO  ,
                           XXXXXXX  , XXXXXXX       , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                   XXXXXXX  , XXXXXXX  ,                            XXXXXXX
