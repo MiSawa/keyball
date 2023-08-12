@@ -47,7 +47,7 @@ enum layers {
 #define RCTLBSPC RCTL_T(KC_BSPC)
 
 #define LOWERSPC LT(LAYER_LOWER, KC_SPC)
-#define RAISEENT LT(LAYER_RAISE, KC_ENT)
+#define RAISEENT LT(LAYER_UPPER, KC_ENT)
 #define MOUSEHNK LT(LAYER_MOUSE, KC_HENK)
 
 // clang-format off
