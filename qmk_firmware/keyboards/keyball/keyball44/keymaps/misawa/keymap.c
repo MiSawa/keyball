@@ -83,7 +83,7 @@ const uint16_t PROGMEM keymaps[DYNAMIC_KEYMAP_LAYER_COUNT][MATRIX_ROWS][MATRIX_C
     OOOOOOO  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        XXXXXXX  , XXXXXXX  , SCRL_MO  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,
     OOOOOOO  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        XXXXXXX  , KC_BTN1  , KC_BTN2  , KC_BTN3  , XXXXXXX  , XXXXXXX  ,
     OOOOOOO  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , OOOOOOO  ,
-                          OOOOOOO  , OOOOOOO       , OOOOOOO  , OOOOOOO  , OOOOOOO  ,                   OOOOOOO  , OOOOOOO  ,                            OOOOOOO
+                          XXXXXXX  , XXXXXXX       , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                   XXXXXXX  , XXXXXXX  ,                            XXXXXXX
   ),
 
   [LAYER_ADJUST] = LAYOUT_right_ball(
