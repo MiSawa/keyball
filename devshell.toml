@@ -26,8 +26,14 @@ qmk compile -j 4 -kb keyball/keyball44 -km misawa
 
 [[commands]]
 name = "flash"
-help = "flash firmware"
+help = "Flash firmware"
 command = '''
 qmk flash -kb keyball/keyball44 -km misawa
 '''
 
+[[commands]]
+name = "format"
+help = "Fomrat my firmware files"
+command = '''
+clang-format "-style=file:$QMK_HOME/.clang-format" -i "$KEYBALL_ROOT/qmk_firmware/keyboards/keyball/keyball44/keymaps/misawa/"*.{c,h}
+'''

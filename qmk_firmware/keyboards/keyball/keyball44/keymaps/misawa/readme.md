@@ -15,6 +15,15 @@ qmk compile -j 4 -kb keyball/keyball44 -km misawa
 qmk flash -kb keyball/keyball44 -km misawa
 ```
 
+or
+
+```
+$ nix develop
+[devshell]$ setup
+[devshell]$ compile
+[devshell]$ flash
+```
+
 ## Release
 
 Modify source code, commit, tag it and push.
@@ -24,4 +33,3 @@ git push --tags
 ```
 
 This will trigger a GitHub workflow, and a GitHub release with the generated hex file will be available soon.
-
