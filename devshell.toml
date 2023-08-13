@@ -1,0 +1,33 @@
+[[env]]
+name = "KEYBALL_ROOT"
+eval = "$(git rev-parse --show-toplevel)"
+
+[[env]]
+name = "QMK_HOME"
+eval = "$KEYBALL_ROOT/__qmk__"
+
+[[commands]]
+package = "qmk"
+
+[[commands]]
+name = "setup"
+help = "Setup QMK firmware"
+command = '''
+qmk setup -b 0.16.3 -y
+ln -sf "$KEYBALL_ROOT/qmk_firmware/keyboards/keyball" "$QMK_HOME/keyboards/keyball"
+'''
+
+[[commands]]
+name = "compile"
+help = "Compile firmware"
+command = '''
+qmk compile -j 4 -kb keyball/keyball44 -km misawa
+'''
+
+[[commands]]
+name = "flash"
+help = "flash firmware"
+command = '''
+qmk flash -kb keyball/keyball44 -km misawa
+'''
+
