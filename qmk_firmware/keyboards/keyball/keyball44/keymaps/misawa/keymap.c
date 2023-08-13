@@ -28,6 +28,9 @@ enum layers {
     LAYER_MOUSE,
     LAYER_ADJUST,
 };
+enum my_keycodes {
+    MO_PREC = KEYBALL_SAFE_RANGE, // Momentarily enter precision mode
+};
 
 #define OOOOOOO KC_TRNS
 #define XXXXXXX KC_NO
@@ -82,7 +85,7 @@ const uint16_t PROGMEM keymaps[DYNAMIC_KEYMAP_LAYER_COUNT][MATRIX_ROWS][MATRIX_C
 
   [LAYER_MOUSE] = LAYOUT_right_ball(
     OOOOOOO  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        XXXXXXX  , XXXXXXX  , SCRL_MO  , KC_MUTE  , KC_VOLD  , KC_VOLU  ,
-    OOOOOOO  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        XXXXXXX  , KC_BTN1  , KC_BTN2  , KC_BTN3  , XXXXXXX  , XXXXXXX  ,
+    OOOOOOO  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        MO_PREC  , KC_BTN1  , KC_BTN2  , KC_BTN3  , XXXXXXX  , XXXXXXX  ,
     OOOOOOO  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , OOOOOOO  ,
                           XXXXXXX  , XXXXXXX       , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                   XXXXXXX  , XXXXXXX  ,                            XXXXXXX
   ),
@@ -100,8 +103,31 @@ layer_state_t layer_state_set_user(const layer_state_t state) {
     return update_tri_layer_state(state, LAYER_LOWER, LAYER_UPPER, LAYER_ADJUST);
 }
 
-// bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-// }
+bool process_record_user(uint16_t keycode, keyrecord_t* const record) {
+    // strip QK_MODS part.
+    if (keycode >= QK_MODS && keycode <= QK_MODS_MAX) {
+        keycode &= 0xff;
+    }
+
+    switch (keycode) {
+        case MO_PREC: {
+            static uint8_t cpi_saved = 0;
+            if (record->event.pressed) {
+                if (cpi_saved == 0) {
+                    cpi_saved = keyball_get_cpi();
+                    keyball_set_cpi(PRECISION_MODE_CPI / 100);
+                }
+            } else {
+                if (cpi_saved != 0) {
+                    keyball_set_cpi(cpi_saved);
+                    cpi_saved = 0;
+                }
+            }
+            return false;
+        }
+    }
+    return true;
+}
 
 #ifdef OLED_ENABLE
 
