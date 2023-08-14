@@ -112,11 +112,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t* const record) {
 
     switch (keycode) {
         case MO_PREC: {
-            static uint8_t cpi_saved = 0;
+            static uint8_t cpi_saved        = 0;
             static uint8_t scroll_div_saved = 0;
             if (record->event.pressed) {
                 if (cpi_saved == 0) {
-                    cpi_saved = keyball_get_cpi();
+                    cpi_saved        = keyball_get_cpi();
                     scroll_div_saved = keyball_get_scroll_div();
                     keyball_set_cpi(PRECISION_MODE_CPI / 100);
                     keyball_set_scroll_div(PRECISION_MODE_SCROLL_DIV);
@@ -125,7 +125,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t* const record) {
                 if (cpi_saved != 0) {
                     keyball_set_cpi(cpi_saved);
                     keyball_set_scroll_div(scroll_div_saved);
-                    cpi_saved = 0;
+                    cpi_saved        = 0;
                     scroll_div_saved = 0;
                 }
             }
