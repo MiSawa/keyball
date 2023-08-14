@@ -45,3 +45,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define RETRO_TAPPING
 
 #define PRECISION_MODE_CPI 300
+#define PRECISION_MODE_SCROLL_DIV 7
+

@@ -84,15 +84,15 @@ const uint16_t PROGMEM keymaps[DYNAMIC_KEYMAP_LAYER_COUNT][MATRIX_ROWS][MATRIX_C
   ),
 
   [LAYER_MOUSE] = LAYOUT_right_ball(
-    OOOOOOO  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        XXXXXXX  , XXXXXXX  , SCRL_MO  , KC_MUTE  , KC_VOLD  , KC_VOLU  ,
-    OOOOOOO  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        MO_PREC  , KC_BTN1  , KC_BTN2  , KC_BTN3  , XXXXXXX  , XXXXXXX  ,
-    OOOOOOO  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , OOOOOOO  ,
+    OOOOOOO  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        KC_WFWD  , XXXXXXX  , SCRL_MO  , MO_PREC  , KC_VOLD  , KC_VOLU  ,
+    OOOOOOO  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        KC_WBAK  , KC_BTN1  , KC_BTN2  , KC_BTN3  , KC_MUTE  , XXXXXXX  ,
+    OOOOOOO  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        KC_WREF  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , OOOOOOO  ,
                           XXXXXXX  , XXXXXXX       , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                   XXXXXXX  , XXXXXXX  ,                            XXXXXXX
   ),
 
   [LAYER_ADJUST] = LAYOUT_right_ball(
     XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        DF_WORK  , DF_QWERT , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,
-    XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        XXXXXXX  , SCRL_DVD , SCRL_DVI , XXXXXXX  , XXXXXXX  , XXXXXXX  ,
+    XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        XXXXXXX  , SCRL_DVI , SCRL_DVD , XXXXXXX  , XXXXXXX  , XXXXXXX  ,
     XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        CPI_D1K  , CPI_D100 , CPI_I100 , CPI_I1K  , XXXXXXX  , KBC_SAVE ,
                           RESET    , KBC_RST       , XXXXXXX  , OOOOOOO  , XXXXXXX  ,                   XXXXXXX  , OOOOOOO  ,                            XXXXXXX
   ),
@@ -112,15 +112,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t* const record) {
     switch (keycode) {
         case MO_PREC: {
             static uint8_t cpi_saved = 0;
+            static uint8_t scroll_div_saved = 0;
             if (record->event.pressed) {
                 if (cpi_saved == 0) {
                     cpi_saved = keyball_get_cpi();
+                    scroll_div_saved = keyball_get_scroll_div();
                     keyball_set_cpi(PRECISION_MODE_CPI / 100);
+                    keyball_set_scroll_div(PRECISION_MODE_SCROLL_DIV);
                 }
             } else {
                 if (cpi_saved != 0) {
                     keyball_set_cpi(cpi_saved);
+                    keyball_set_scroll_div(scroll_div_saved);
                     cpi_saved = 0;
+                    scroll_div_saved = 0;
                 }
             }
             return false;
