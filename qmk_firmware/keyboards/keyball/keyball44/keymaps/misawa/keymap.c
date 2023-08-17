@@ -23,9 +23,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 enum layers {
     LAYER_WORKMAN,
     LAYER_QWERTY,
+    LAYER_BROWSE,
     LAYER_LOWER,
     LAYER_UPPER,
-    LAYER_BROWSE,
     LAYER_ADJUST,
 };
 enum my_keycodes {
