@@ -70,6 +70,13 @@ const uint16_t PROGMEM keymaps[DYNAMIC_KEYMAP_LAYER_COUNT][MATRIX_ROWS][MATRIX_C
                           LALTMHEN , LCTLHENK      , KC_DEL   , LOWERSPC , KC_SPC   ,                   KC_BSPC  , RAISEENT ,                            BRWSHNK
   ),
 
+  [LAYER_BROWSE] = LAYOUT_right_ball(
+    OOOOOOO  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        KC_WFWD  , XXXXXXX  , SCRL_MO  , MO_PREC  , KC_VOLD  , KC_VOLU  ,
+    OOOOOOO  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        KC_WBAK  , KC_BTN1  , KC_BTN2  , KC_BTN3  , KC_MUTE  , TG_BRWS  ,
+    OOOOOOO  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        KC_WREF  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , OOOOOOO  ,
+                          XXXXXXX  , XXXXXXX       , XXXXXXX  , OOOOOOO  , XXXXXXX  ,                   XXXXXXX  , OOOOOOO  ,                            XXXXXXX
+  ),
+
   [LAYER_LOWER] = LAYOUT_right_ball(
     KC_ESC   , KC_EXLM  , KC_AT    , KC_HASH  , KC_DLR   , KC_PERC  ,                                        KC_CIRC  , KC_AMPR  , KC_ASTR  , KC_LPRN  , KC_RPRN  , KC_DEL   ,
     OOOOOOO  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        KC_GRV   , KC_MINUS , KC_EQL   , KC_LCBR  , KC_RCBR  , KC_GRV   ,
@@ -82,13 +89,6 @@ const uint16_t PROGMEM keymaps[DYNAMIC_KEYMAP_LAYER_COUNT][MATRIX_ROWS][MATRIX_C
     OOOOOOO  , KC_1     , KC_2     , KC_3     , KC_4     , KC_5     ,                                        KC_6     , KC_7     , KC_8     , KC_9     , KC_0     , KC_F12   ,
     OOOOOOO  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        KC_LEFT  , KC_DOWN  , KC_UP    , KC_RIGHT , XXXXXXX  , OOOOOOO  ,
                           OOOOOOO  , OOOOOOO       , OOOOOOO  , OOOOOOO  , OOOOOOO  ,                   OOOOOOO  , OOOOOOO  ,                            OOOOOOO
-  ),
-
-  [LAYER_BROWSE] = LAYOUT_right_ball(
-    OOOOOOO  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        KC_WFWD  , XXXXXXX  , SCRL_MO  , MO_PREC  , KC_VOLD  , KC_VOLU  ,
-    OOOOOOO  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        KC_WBAK  , KC_BTN1  , KC_BTN2  , KC_BTN3  , KC_MUTE  , TG_BRWS  ,
-    OOOOOOO  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                                        KC_WREF  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , OOOOOOO  ,
-                          XXXXXXX  , XXXXXXX       , XXXXXXX  , XXXXXXX  , XXXXXXX  ,                   XXXXXXX  , XXXXXXX  ,                            XXXXXXX
   ),
 
   [LAYER_ADJUST] = LAYOUT_right_ball(
