@@ -127,6 +127,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t* const record) {
                     keyball_set_scroll_div(scroll_div_saved);
                     cpi_saved        = 0;
                     scroll_div_saved = 0;
+                    keyball.this_motion.x = 0;
+                    keyball.this_motion.y = 0;
+                    keyball.that_motion.x = 0;
+                    keyball.that_motion.y = 0;
                 }
             }
             return false;
